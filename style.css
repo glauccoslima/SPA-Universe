@@ -1,0 +1,191 @@
+/* Reset básico para remover margens, paddings e definir o box-sizing para border-box em todos os elementos, promovendo consistência entre navegadores. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais definidas no root para facilitar a manutenção e reutilização de cores e fontes em todo o CSS.
+   A função clamp é usada para a font-size para garantir a acessibilidade e responsividade. */
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  font-family: 'Roboto', sans-serif;
+  --body-nav-h1-button-color: #fff;
+  --button-hover-color: #02799D;
+}
+
+/* Configuração do fundo do body e uso de grid para alinhamento de conteúdo. A variável de cor é usada para garantir a consistência. */
+body {
+  background-image: url('./assets/mountains-universe-1.png');
+  background-size: cover;
+  font-size: 1.6rem;
+  color: var(--body-nav-h1-button-color);
+
+  display: grid;
+  grid-template-rows: 10vh 80vh;
+}
+
+/* Customização de diferentes páginas usando classes adicionais para mudar o background e ajustar o layout conforme o contexto. */
+body.universe {
+  background-image: url('./assets/mountains-universe02.png');
+}
+
+body.universe #mainContent {
+  place-content: initial;
+  grid-template-rows: 10rem max-content;
+}
+
+body.exploration {
+  background-image: url('./assets/mountains-universe-3.png')
+}
+
+body.exploration #mainContent {
+  place-content: initial;
+  grid-template-rows: 10rem max-content;
+}
+
+/* Estilização da barra de navegação com flexbox para alinhar itens horizontalmente e definir espaços consistentes. */
+nav {
+  padding: 4rem 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4rem;
+}
+
+/* Links na barra de navegação com estilos padrão e uma classe especial para destacar o link ativo. */
+nav a {
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--body-nav-h1-button-color);
+  font-size: 2.1rem;
+}
+
+nav a.select {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/* Main content styling com centralização usando grid e ajustes de padding para espaçamento. */
+#mainContent {
+  padding: 6rem 10rem;
+  display: grid;
+  place-content: center;
+}
+
+/* Estilização do título principal e parágrafos, garantindo legibilidade e destaque. */
+h1 {
+  color: var(--body-nav-h1-button-color);
+  font-size: 4.8rem;
+  margin-bottom: 2.4rem;
+}
+
+p {
+  max-width: 64.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+/* Botões com bordas e a possibilidade de alterar o fundo e cor no hover para melhor feedback ao usuário. */
+button {
+  max-width: 24rem;
+  padding: 12px 32px;
+  margin: auto;
+  background-color: transparent;
+  color: var(--body-nav-h1-button-color);
+  border: .2rem solid var(--body-nav-h1-button-color);
+  border-radius: .5rem;
+  line-height: 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--body-nav-h1-button-color);
+  color: var(--button-hover-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+/* Media queries para ajustar a responsividade do layout em diferentes tamanhos de tela. */
+@media only screen and (max-width: 320px) {
+  body {
+    display: grid;
+    grid-template-rows: minmax(10vh, auto) 80vh;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1.0rem;
+  }
+
+  nav a.select {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  button {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  button:hover,
+  button:focus {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+
+  /* Estilos específicos para faixas de largura de tela, garantindo legibilidade e usabilidade em dispositivos pequenos. */
+  h1,
+  button {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1.0rem;
+  }
+
+  nav a.select {
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 598px) {
+
+  /* Ajustes para tablets e dispositivos de tela pequena, mantendo a consistência visual e funcional. */
+  h1,
+  button {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  nav a.select {
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+}

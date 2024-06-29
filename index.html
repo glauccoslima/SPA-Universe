@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Caracteres e responsividade: O uso de UTF-8 e as configurações de viewport asseguram que o site será exibido corretamente em diferentes dispositivos e suportará caracteres especiais. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Otimização do carregamento: Pré-conexão com Google Fonts e crossorigin para aumentar a eficiência de carregamento das fontes usadas no site. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fontes e estilos: Escolha da família 'Roboto' por sua legibilidade e versatilidade em diferentes pesos, adequada para interfaces de usuário. -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Ícone e CSS: Definição do favicon e do arquivo de estilo principal. -->
+  <link rel="shortcut icon" href="/assets/Vector.svg" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Scripts: Importação de JavaScript como módulo, indicando práticas modernas de modularização e escopo de uso. -->
+  <script type="module" src="/js/index.js"></script>
+
+  <!-- Título da página, essencial para SEO e usabilidade. -->
+  <title>SPA Universe</title>
+</head>
+
+<body>
+  <!-- Navegação: Uso de elementos semânticos e ícones para uma barra de navegação intuitiva e acessível. -->
+  <nav>
+    <img src="./assets/Vector.svg" alt="Logo Vector">
+    <a href="/" onclick="route()" id="home" class="select">Home</a>
+    <a href="/universo" onclick="route()" id="universe">O Universo</a>
+    <a href="/exploracao" onclick="route()" id="exploration">Exploração</a>
+  </nav>
+
+  <!-- Conteúdo principal: Área reservada para a injeção de conteúdo dinâmico via JavaScript. -->
+  <div id="mainContent">
+  </div>
+</body>
+
+</html>
