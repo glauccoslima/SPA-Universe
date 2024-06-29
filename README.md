@@ -2,7 +2,7 @@
 
 O "Universo SPA" é uma aplicação web interativa desenvolvida como parte do programa Explorer da Rocketseat, utilizando conceitos de Single Page Application (SPA). Este projeto oferece uma experiência imersiva para explorar diferentes aspectos do universo, como planetas, estrelas e galáxias, tudo numa interface de página única e responsiva.
 
-🌐 [**Acesse o Universo SPA Online!**](https://seu-link-para-o-projeto.com) 👈
+🌐 [**Acesse o Universo SPA Online!**](https://spa-universe-roan.vercel.app/) 👈
 
 ## Índice
 
@@ -38,9 +38,9 @@ O "Universo SPA" é uma aplicação web interativa desenvolvida como parte do pr
 
 1. **Clone o repositório:**
 
-    ```
-    git clone https://github.com/glauccoslima/SPA-Universe.git
-    ```
+ ```
+git clone https://github.com/glauccoslima/SPA-Universe.git
+```
 
 2. **Navegue até o diretório do projeto:**
 
@@ -60,7 +60,15 @@ npm init -y
 npm install lite-server
 ```
 
-5. **Inicie o servidor de desenvolvimento:**
+5. **Modifique o script de inicialização em `package.json`:**
+- Abra o `package.json` e modifique o script `"start"` para usar o `lite-server`. Isso permite que você inicie o servidor com o comando `npm start`.
+```
+ "scripts": {
+    "start": "lite-server"
+ },
+```
+
+6. **Inicie o servidor de desenvolvimento:**
 
 ```
 npm start
