@@ -5,9 +5,14 @@
   "name": "spa-universe",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "playwright": "^1.45.0",
+    "wait-on": "^7.2.0"
+  },
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "test": "concurrently --kill-others \"npm run start\" \"wait-on http://localhost:3000 && node tests/test.js\""
   },
   "keywords": [],
   "author": "",
