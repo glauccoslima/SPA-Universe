@@ -6,7 +6,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "@eslint/js": "^9.6.0",
     "concurrently": "^8.2.2",
+    "eslint": "^9.6.0",
     "playwright": "^1.45.0",
     "wait-on": "^7.2.0"
   },
@@ -17,5 +19,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "O \"Universo SPA\" é uma aplicação web interativa desenvolvida como parte do programa Explorer da Rocketseat, utilizando conceitos de Single Page Application (SPA). Este projeto oferece uma experiência imersiva para explorar diferentes aspectos do universo, como planetas, estrelas e galáxias, tudo numa interface de página única e responsiva.",
+  "directories": {
+    "test": "tests"
+  }
 }
