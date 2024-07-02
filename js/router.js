@@ -11,7 +11,7 @@ export class Router {
     route(event) {
         event = event || window.event;
         event.preventDefault(); // Evita o comportamento padrão do link
-        window.history.pushState({}, "", event.target.href);
+        window.history.pushState({}, "", event.currentTarget.href);
         this.handle();
     }
 

@@ -112,13 +112,6 @@ button:focus {
   line-height: 2.4rem;
 }
 
-.button-a {
-  text-decoration: none;
-  background-color: transparent;
-  color: none;
-  background-color: none
-}
-
 /* Media queries para ajustar a responsividade do layout em diferentes tamanhos de tela. */
 @media only screen and (max-width: 320px) {
   body {
