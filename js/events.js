@@ -1,44 +1,53 @@
-// events.js: Configura os eventos de clique para controle da navegação na SPA
-import * as elements from './elements.js';
+// events.js: Configura eventos de clique para navegação em uma SPA (Single Page Application).
+
+import * as elements from './elements.js';  // Importa referências dos elementos DOM utilizados nos eventos.
 
 export function registerControls() {
-    // Verifica se o elemento 'home' existe antes de adicionar o evento de clique
-    if (elements.home) {
-        elements.home.addEventListener('click', () => {
-            elements.exploration.classList.remove('select');
+    // Registra eventos após o carregamento completo do DOM para garantir que os elementos estejam acessíveis.
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Função para limpar todos os estados de seleção e remover classes específicas.
+        function clearSelections() {
+            elements.home.classList.remove('select');
             elements.universe.classList.remove('select');
+            elements.exploration.classList.remove('select');
+            // Remove classes adicionais de estilização conforme o contexto.
             elements.body.classList.remove('universe', 'exploration');
-            elements.home.classList.add('select');
-        });
-    }
+        }
 
-    // Verifica se o elemento 'universe' existe antes de adicionar o evento de clique
-    if (elements.universe) {
-        elements.universe.addEventListener('click', () => {
-            elements.home.classList.remove('select');
-            elements.exploration.classList.remove('select');
-            elements.body.classList.remove('exploration');
-            elements.body.classList.add('universe');
-            elements.universe.classList.add('select');
-        });
-    }
+        // Registra evento de clique para o elemento 'home'.
+        if (elements.home) {
+            elements.home.addEventListener('click', () => {
+                clearSelections();  // Limpa seleções atuais antes de mudar o estado.
+                elements.home.classList.add('select');  // Marca o elemento 'home' como selecionado.
+                elements.body.classList.add('home'); // Adiciona a classe 'home' ao corpo para estilização específica.
+            });
+        }
 
-    // Verifica se o elemento 'exploration' existe antes de adicionar o evento de clique
-    if (elements.exploration) {
-        elements.exploration.addEventListener('click', () => {
-            elements.home.classList.remove('select');
-            elements.universe.classList.remove('select');
-            elements.body.classList.remove('universe');
-            elements.body.classList.add('exploration');
-            elements.exploration.classList.add('select');
-        });
-    }
+        // Semelhante ao 'home', registra eventos de clique para os elementos 'universe' e 'exploration'.
+        if (elements.universe) {
+            elements.universe.addEventListener('click', () => {
+                clearSelections();
+                elements.universe.classList.add('select');
+                elements.body.classList.add('universe'); // Adiciona a classe 'universe' ao corpo para estilização específica.
+            });
+        }
 
-    // Verifica se o botão 'moreInfoBtn' existe antes de adicionar o evento de clique
-    if (elements.moreInfoBtn) {
-        elements.moreInfoBtn.addEventListener('click', () => {
-            console.log('Botão mais informações clicado!');
-        });
-    }
+        if (elements.exploration) {
+            elements.exploration.addEventListener('click', () => {
+                clearSelections();
+                elements.exploration.classList.add('select');
+                elements.body.classList.add('exploration'); // Adiciona a classe 'exploration' ao corpo para estilização específica.
+            });
+        }
+
+        // Gerencia cliques no botão 'moreInfoBtn', realçando 'universe' ao ser pressionado.
+        if (elements.moreInfoBtn) {
+            elements.moreInfoBtn.addEventListener('click', () => {
+                clearSelections();
+                elements.universe.classList.add('select');  // Assume que 'universe' precisa ser destacado.
+                elements.body.classList.add('universe'); // Adiciona a classe 'universe' ao corpo para estilização específica.
+            });
+        }
+    });
 }
-
